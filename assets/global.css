@@ -1,0 +1,9 @@
+:root {
+  --gray-900: #1b1b1b;
+  --accent: 124, 58, 237;
+  --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+}
+html {
+  background-color: var(--gray-900);
+  color: white;
+}
