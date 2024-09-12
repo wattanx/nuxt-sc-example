@@ -1,8 +1,14 @@
 <script setup lang="ts">
-import { codeToHtml } from 'shiki';
+import { createHighlighterCore, createWasmOnigEngine } from 'shiki/core';
+
+const highlighter = await createHighlighterCore({
+  themes: [import('shiki/themes/vitesse-dark.mjs')],
+  langs: [import('shiki/langs/javascript.mjs')],
+  engine: createWasmOnigEngine(import('shiki/wasm')),
+});
 
 const code = 'const a = 1';
-const html = await codeToHtml(code, {
+const html = highlighter.codeToHtml(code, {
   lang: 'javascript',
   theme: 'vitesse-dark',
 });
