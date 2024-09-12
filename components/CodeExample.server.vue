@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { createHighlighterCore, createWasmOnigEngine } from 'shiki/core';
+import { createHighlighterCore, createWasmOnigEngine, loadWasm } from 'shiki/core';
+
+await loadWasm(import('shiki/wasm'));
 
 const highlighter = await createHighlighterCore({
   themes: [import('shiki/themes/vitesse-dark.mjs')],
