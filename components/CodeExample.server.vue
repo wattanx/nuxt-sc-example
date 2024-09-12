@@ -1,13 +1,9 @@
 <script setup lang="ts">
-import { createHighlighterCore, createWasmOnigEngine, loadWasm } from 'shiki/core';
+import hljs from 'highlight.js/lib/core';
+import typescript from 'highlight.js/lib/languages/typescript';
+import 'highlight.js/styles/github-dark.css';
 
-await loadWasm(import('shiki/wasm'));
-
-const highlighter = await createHighlighterCore({
-  themes: [import('shiki/themes/vitesse-dark.mjs')],
-  langs: [import('shiki/langs/javascript.mjs')],
-  engine: createWasmOnigEngine(import('shiki/wasm')),
-});
+hljs.registerLanguage('typescript', typescript);
 
 type Props = {
   count: number;
@@ -16,10 +12,7 @@ type Props = {
 const props = defineProps<Props>();
 
 const code = `const a = ${props.count}`;
-const html = highlighter.codeToHtml(code, {
-  lang: 'javascript',
-  theme: 'vitesse-dark',
-});
+const html = hljs.highlightAuto(code).value;
 </script>
 
 <template>
@@ -28,7 +21,7 @@ const html = highlighter.codeToHtml(code, {
       <p class="absolute -top-4 bg-gray-600 px-4 py-2 rounded-full text-sm">Server Component</p>
       <p>This component is not included in the bundle</p>
       <p>If count is changed, code is changed.</p>
-      <div v-html="html" />
+      <div class="bg-gray-900" v-html="html" />
     </div>
   </div>
 </template>
