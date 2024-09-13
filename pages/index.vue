@@ -4,6 +4,10 @@ import NavigationCard from '~/components/NavigationCard.vue';
 
 <template>
   <div class="flex flex-col gap-2">
-    <NavigationCard href="/standalone-server-components" title="Standalone server components" description="basic example" />
+    <NavigationCard
+      href="/examples/standalone-server-components"
+      title="Standalone server components"
+      description="basic example"
+    />
   </div>
 </template>
