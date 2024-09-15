@@ -1,12 +1,14 @@
 <script setup lang="ts">
+// Cannot get current path without using native
+import { useRoute } from 'vue-router';
 import type { Meta } from '~/types/data';
 import FileTree from '~/components/FileTree.vue';
 
 const route = useRoute();
 
-const exampleName = route.path.split('/')[2] as string;
+const exampleName = computed(() => route.path.split('/')[2] as string);
 
-const data: { meta: Meta; codes: Record<string, string> } = await import(`../_generated/${exampleName}.json`);
+const data: { meta: Meta; codes: Record<string, string> } = await import(`../_generated/${exampleName.value}.json`);
 </script>
 
 <template>
