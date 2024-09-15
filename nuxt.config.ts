@@ -8,6 +8,12 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: 'Nuxt Server Components Example',
+      meta: [
+        {
+          name: 'description',
+          content: 'This is an example collection of Nuxt Server Components',
+        },
+      ],
     },
   },
   devtools: { enabled: true },
