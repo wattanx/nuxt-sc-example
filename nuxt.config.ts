@@ -1,10 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  routeRules: {
-    '/examples/standalone-server-components': {
-      prerender: true,
-    },
-  },
   app: {
     head: {
       title: 'Nuxt Server Components Example',
