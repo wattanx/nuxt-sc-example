@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import hljs from 'highlight.js/lib/core';
-import typescript from 'highlight.js/lib/languages/typescript';
-import 'highlight.js/styles/github-dark.css';
-
-hljs.registerLanguage('typescript', typescript);
+import { codeToHtml } from '~/lib/codeToHtml';
 
 type Props = {
   count: number;
@@ -12,7 +8,7 @@ type Props = {
 const props = defineProps<Props>();
 
 const code = `const a = ${props.count}`;
-const html = hljs.highlightAuto(code).value;
+const html = await codeToHtml(code, 'javascript');
 </script>
 
 <template>
