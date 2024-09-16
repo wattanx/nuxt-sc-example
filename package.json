@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "NITRO_PRESET=cloudflare-pages nuxt build",
-    "dev": "nuxt dev",
+    "dev": "pnpm run code:generate && nuxt dev",
     "generate": "nuxt generate",
     "preview": "wrangler pages dev dist",
     "postinstall": "nuxt prepare",
