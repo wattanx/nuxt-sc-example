@@ -13,13 +13,10 @@ const data: { meta: Meta; codes: Record<string, string> } = await import(`../_ge
 
 <template>
   <div class="space-y-2">
-    <h2 class="text-xl">Standalone server components</h2>
+    <h2 class="text-xl">{{ data.meta.title }}</h2>
 
-    <p class="text-gray-400">
-      Standalone server components will always be rendered on the server, also known as Islands components.
-    </p>
-    <p class="text-gray-400">
-      When their props update, this will result in a network request that will update the rendered HTML in-place.
+    <p class="text-gray-400 whitespace-pre-wrap">
+      {{ data.meta.description }}
     </p>
   </div>
 

@@ -3,7 +3,7 @@
     "kind": "standalone-server-components",
     "path": "standalone-server-components",
     "title": "Standalone Server Components",
-    "description": "Basic example of standalone server components"
+    "description": "Standalone server components will always be rendered on the server, also known as Islands components.\nWhen their props update, this will result in a network request that will update the rendered HTML in-place."
   },
   "codes": {
     "components/CodeExample.server.vue": "<script setup lang=\"ts\">\nimport hljs from 'highlight.js/lib/core';\nimport typescript from 'highlight.js/lib/languages/typescript';\nimport 'highlight.js/styles/github-dark.css';\n\nhljs.registerLanguage('typescript', typescript);\n\ntype Props = {\n  count: number;\n};\n\nconst props = defineProps<Props>();\n\nconst code = `const a = ${props.count}`;\nconst html = hljs.highlightAuto(code).value;\n</script>\n\n<template>\n  <div class=\"p-6 bg-blue-900 rounded-md relative border-dashed border-gray-400 border\">\n    <div class=\"space-y-4\">\n      <p class=\"absolute -top-4 bg-gray-600 px-4 py-2 rounded-full text-sm\">Server Component</p>\n      <p>This component is not included in the bundle</p>\n      <p>If count is changed, code is changed.</p>\n      <div class=\"bg-gray-900\" v-html=\"html\" />\n    </div>\n\n    <slot />\n  </div>\n</template>\n",

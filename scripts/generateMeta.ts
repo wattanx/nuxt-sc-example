@@ -9,7 +9,8 @@ export const meta = {
     kind: 'standalone-server-components',
     path: 'standalone-server-components',
     title: 'Standalone Server Components',
-    description: 'Basic example of standalone server components',
+    description:
+      'Standalone server components will always be rendered on the server, also known as Islands components.\nWhen their props update, this will result in a network request that will update the rendered HTML in-place.',
   },
   'client-interactivity': {
     kind: 'client-interactivity',
