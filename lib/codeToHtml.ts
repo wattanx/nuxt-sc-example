@@ -1,4 +1,4 @@
-import { createHighlighterCore, createWasmOnigEngine, loadWasm } from 'shiki/core';
+import { createHighlighterCore, loadWasm } from 'shiki/core';
 
 export async function codeToHtml(code: string, lang: 'javascript' | 'vue') {
   await loadWasm(import('shiki/wasm'));
