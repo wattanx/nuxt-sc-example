@@ -18,6 +18,12 @@ export const meta = {
     title: 'Client Interactivity with Server Components',
     description: 'Client Components can be put in the Server Components slot.',
   },
+  'nuxt-island': {
+    kind: 'nuxt-island',
+    path: 'nuxt-island',
+    title: 'NuxtIsland',
+    description: '`NuxtIsland` is the base component of Server Components',
+  },
 } satisfies Record<Kind, Meta>;
 
 const __filename = fileURLToPath(import.meta.url);
@@ -33,6 +39,7 @@ async function main() {
   const paths = (await glob(join(base, '**/*.vue'))).sort();
 
   const serverComponentsPaths = (await glob(join(__dirname, '../components/**/*.server.vue'))).sort();
+  const islandComponentsPaths = (await glob(join(__dirname, '../components/islands/**/*.vue'))).sort();
 
   const pathMap: Record<
     string,
@@ -47,7 +54,9 @@ async function main() {
 
     pathMap[name] = {
       kind: name as Kind,
-      paths: [...serverComponentsPaths, path].map((path) => removeBasePath(path, join(__dirname, '../'))),
+      paths: [...serverComponentsPaths, ...islandComponentsPaths, path].map((path) =>
+        removeBasePath(path, join(__dirname, '../'))
+      ),
     };
   }
 
