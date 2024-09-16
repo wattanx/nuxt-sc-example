@@ -26,9 +26,9 @@ const data: { meta: Meta; codes: Record<string, string> } = await import(`../_ge
       <slot />
     </div>
 
-    <div class="space-y-2 flex-1 overflow-auto">
+    <div class="gap-2 flex-1 overflow-auto">
       <h3 class="text-xl">Code</h3>
-      <FileTree :codes="data.codes" :filePaths="Object.keys(data.codes)" :exampleName="exampleName" />
+      <FileTree class="mt-8" :codes="data.codes" :filePaths="Object.keys(data.codes)" :exampleName="exampleName" />
     </div>
   </div>
 </template>

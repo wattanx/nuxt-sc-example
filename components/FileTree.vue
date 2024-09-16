@@ -41,7 +41,7 @@ const handleSelectPath = async (path: string) => {
 </script>
 
 <template>
-  <div class="flex mt-4 flex-col lg:flex-row border-gray-400 border rounded-md p-4">
+  <div class="flex flex-col lg:flex-row border-gray-400 border rounded-md p-4">
     <div class="pr-6 pb-6">
       <RenderTree
         :selectedPath="selectedPath"
