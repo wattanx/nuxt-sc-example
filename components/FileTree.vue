@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { createHighlighterCore, createWasmOnigEngine, loadWasm } from 'shiki/core';
+import { codeToHtml } from '~/lib/codeToHtml';
 
 export type FileTreeProps = {
   exampleName: string;
@@ -11,25 +11,11 @@ type Tree = {
 };
 const props = defineProps<FileTreeProps>();
 
-await loadWasm(import('shiki/wasm'));
-
-const highlighter = await createHighlighterCore({
-  themes: [import('shiki/themes/vitesse-dark.mjs')],
-  langs: [import('shiki/langs/javascript.mjs'), import('shiki/langs/vue.mjs')],
-  engine: createWasmOnigEngine(import('shiki/wasm')),
-});
-
-const getInitialCode = () => {
-  const key = Object.keys(props.codes).find((key) => key.includes(props.exampleName)) || '';
-  const code = highlighter.codeToHtml(props.codes[key] || '', {
-    lang: 'vue',
-    theme: 'vitesse-dark',
-  });
-  return code;
-};
+const key = Object.keys(props.codes).find((key) => key.includes(props.exampleName)) || '';
+const result = await codeToHtml(props.codes[key] || '', 'vue');
+const currentCode = ref(result);
 
 const selectedPath = ref(Object.keys(props.codes).find((key) => key.includes(props.exampleName)) || '');
-const currentCode = ref(getInitialCode());
 
 const tree: Tree = {};
 
@@ -47,11 +33,8 @@ for (const path of props.filePaths) {
   }
 }
 
-const handleSelectPath = (path: string) => {
-  const code = highlighter.codeToHtml(props.codes[path] || '', {
-    lang: 'vue',
-    theme: 'vitesse-dark',
-  });
+const handleSelectPath = async (path: string) => {
+  const code = await codeToHtml(props.codes[path] || '', 'vue');
   currentCode.value = code;
   selectedPath.value = path;
 };
