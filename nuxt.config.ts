@@ -4,6 +4,9 @@ export default defineNuxtConfig({
     '/examples/standalone-server-components': {
       prerender: true,
     },
+    '/examples/client-interactivity': {
+      prerender: true,
+    },
   },
   app: {
     head: {
