@@ -7,6 +7,9 @@ export default defineNuxtConfig({
     '/examples/client-interactivity': {
       prerender: true,
     },
+    '/examples/nuxt-island': {
+      prerender: true,
+    },
   },
   app: {
     head: {

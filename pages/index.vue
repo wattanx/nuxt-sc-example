@@ -15,5 +15,11 @@ import NavigationCard from '~/components/NavigationCard.vue';
       title="Client interactivity within Server Components"
       description="Client Components can be put in the Server Components slot."
     />
+
+    <NavigationCard
+      href="/examples/nuxt-island"
+      title="NuxtIsland"
+      description="`NuxtIsland` is the base component of Server Components"
+    />
   </div>
 </template>
