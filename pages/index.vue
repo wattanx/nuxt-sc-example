@@ -9,5 +9,11 @@ import NavigationCard from '~/components/NavigationCard.vue';
       title="Standalone server components"
       description="basic example"
     />
+
+    <NavigationCard
+      href="/examples/server-and-client-components"
+      title="Server Components Slot"
+      description="Client Components can be put in the Server Components slot."
+    />
   </div>
 </template>
