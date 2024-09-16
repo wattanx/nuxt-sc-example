@@ -11,8 +11,8 @@ import NavigationCard from '~/components/NavigationCard.vue';
     />
 
     <NavigationCard
-      href="/examples/server-and-client-components"
-      title="Server Components Slot"
+      href="/examples/client-interactivity"
+      title="Client interactivity within Server Components"
       description="Client Components can be put in the Server Components slot."
     />
   </div>

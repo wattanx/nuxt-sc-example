@@ -11,6 +11,12 @@ export const meta = {
     title: 'Standalone Server Components',
     description: 'Basic example of standalone server components',
   },
+  'client-interactivity': {
+    kind: 'client-interactivity',
+    path: 'client-interactivity',
+    title: 'Client Interactivity with Server Components',
+    description: 'Client Components can be put in the Server Components slot.',
+  },
 } satisfies Record<Kind, Meta>;
 
 const __filename = fileURLToPath(import.meta.url);
