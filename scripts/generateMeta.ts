@@ -38,8 +38,12 @@ async function main() {
   const base = join(__dirname, '../pages/examples');
   const paths = (await glob(join(base, '**/*.vue'))).sort();
 
-  const serverComponentsPaths = (await glob(join(__dirname, '../components/**/*.server.vue'))).sort();
-  const islandComponentsPaths = (await glob(join(__dirname, '../components/islands/**/*.vue'))).sort();
+  const serverComponentsPaths = (
+    await glob(join(__dirname, '../components/**/*.server.vue'))
+  ).sort();
+  const islandComponentsPaths = (
+    await glob(join(__dirname, '../components/islands/**/*.vue'))
+  ).sort();
 
   const pathMap: Record<
     string,
@@ -54,37 +58,41 @@ async function main() {
 
     pathMap[name] = {
       kind: name as Kind,
-      paths: [...serverComponentsPaths, ...islandComponentsPaths, path].map((path) =>
-        removeBasePath(path, join(__dirname, '../'))
+      paths: [...serverComponentsPaths, ...islandComponentsPaths, path].map(
+        (path) => removeBasePath(path, join(__dirname, '../')),
       ),
     };
   }
 
-  const promises = Object.entries(pathMap).map(async ([key, { kind, paths }]) => {
-    const codeMap: Record<string, string> = {};
-    const code = await Promise.all(paths.map((path) => readFile(path, 'utf-8')));
+  const promises = Object.entries(pathMap).map(
+    async ([key, { kind, paths }]) => {
+      const codeMap: Record<string, string> = {};
+      const code = await Promise.all(
+        paths.map((path) => readFile(path, 'utf-8')),
+      );
 
-    for (const [index, path] of paths.entries()) {
-      const name = path.replace(join(base, `(${kind})`, key, '/'), '');
+      for (const [index, path] of paths.entries()) {
+        const name = path.replace(join(base, `(${kind})`, key, '/'), '');
 
-      // @ts-expect-error
-      codeMap[name] = code[index];
-    }
+        // @ts-expect-error
+        codeMap[name] = code[index];
+      }
 
-    await writeFile(
-      join('.', '_generated', `${key}.json`),
-      JSON.stringify(
-        {
-          meta: {
-            ...meta[kind],
+      await writeFile(
+        join('.', '_generated', `${key}.json`),
+        JSON.stringify(
+          {
+            meta: {
+              ...meta[kind],
+            },
+            codes: codeMap,
           },
-          codes: codeMap,
-        },
-        null,
-        2
-      )
-    );
-  });
+          null,
+          2,
+        ),
+      );
+    },
+  );
 
   await Promise.all(promises);
 }

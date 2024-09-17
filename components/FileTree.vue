@@ -11,11 +11,14 @@ type Tree = {
 };
 const props = defineProps<FileTreeProps>();
 
-const key = Object.keys(props.codes).find((key) => key.includes(props.exampleName)) || '';
+const key =
+  Object.keys(props.codes).find((key) => key.includes(props.exampleName)) || '';
 const result = await codeToHtml(props.codes[key] || '', 'vue');
 const currentCode = ref(result);
 
-const selectedPath = ref(Object.keys(props.codes).find((key) => key.includes(props.exampleName)) || '');
+const selectedPath = ref(
+  Object.keys(props.codes).find((key) => key.includes(props.exampleName)) || '',
+);
 
 const tree: Tree = {};
 
@@ -41,8 +44,8 @@ const handleSelectPath = async (path: string) => {
 </script>
 
 <template>
-  <div class="flex flex-col lg:flex-row border-gray-400 border rounded-md p-4">
-    <div class="pr-6 pb-6">
+  <div class="flex flex-col rounded-md border border-gray-400 p-4 lg:flex-row">
+    <div class="pb-6 pr-6">
       <RenderTree
         :selectedPath="selectedPath"
         @selectPath="handleSelectPath"
@@ -51,7 +54,9 @@ const handleSelectPath = async (path: string) => {
         :exampleName="props.exampleName"
       />
     </div>
-    <div class="overflow-auto px-4 py-4 lg:py-0 border-t lg:border-l lg:border-t-0 border-gray-400">
+    <div
+      class="overflow-auto border-t border-gray-400 px-4 py-4 lg:border-l lg:border-t-0 lg:py-0"
+    >
       <div v-html="currentCode"></div>
     </div>
   </div>

@@ -49,7 +49,9 @@ const nodes = Object.keys(props.node).map((key) => {
         :style="{ paddingLeft: `${node.position}px` }"
         v-if="!node.hasChildren"
       >
-        <button @click="$emit('selectPath', node.newPath)">{{ node.key }}</button>
+        <button @click="$emit('selectPath', node.newPath)">
+          {{ node.key }}
+        </button>
         <RenderTree
           :selectedPath="selectedPath"
           :node="node.child"
@@ -59,14 +61,21 @@ const nodes = Object.keys(props.node).map((key) => {
         />
       </li>
 
-      <details class="select-none" v-else :style="{ paddingLeft: `${node.position}px` }" open>
-        <summary class="flex gap-1 items-center list-none cursor-pointer text-gray-400 select-none">
+      <details
+        class="select-none"
+        v-else
+        :style="{ paddingLeft: `${node.position}px` }"
+        open
+      >
+        <summary
+          class="flex cursor-pointer select-none list-none items-center gap-1 text-gray-400"
+        >
           <FolderIcon />
           {{ node.key }}
         </summary>
         <RenderTree
           :selectedPath="selectedPath"
-          class="ml-2 t-1 border-l border-l-gray-600"
+          class="t-1 ml-2 border-l border-l-gray-600"
           :node="node.child"
           :index="index + 1"
           :exampleName="exampleName"
