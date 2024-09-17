@@ -19,6 +19,34 @@ export default defineNuxtConfig({
           name: 'description',
           content: 'This is an example collection of Nuxt Server Components',
         },
+        {
+          name: 'og:title',
+          content: 'Nuxt Server Components Example',
+        },
+        {
+          name: 'og:type',
+          content: 'website',
+        },
+        {
+          name: 'og:url',
+          content: 'https://nuxt-sc-example.pages.dev/',
+        },
+        {
+          name: 'og:description',
+          content: 'This is an example collection of Nuxt Server Components',
+        },
+        {
+          name: 'og:site_name',
+          content: 'Nuxt Server Components Example',
+        },
+        {
+          name: 'twitter:card',
+          content: 'summary_large_image',
+        },
+        {
+          name: 'twitter:creator',
+          content: '@pontaxx',
+        },
       ],
     },
   },
