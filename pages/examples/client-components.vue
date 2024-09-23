@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import CodeExample from '~/components/clients/CodeExample.vue';
+
+definePageMeta({
+  layout: 'example',
+});
+
 const count = ref(0);
 </script>
 

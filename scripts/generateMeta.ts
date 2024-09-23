@@ -24,6 +24,12 @@ export const meta = {
     title: 'NuxtIsland',
     description: '`NuxtIsland` is the base component of Server Components',
   },
+  'client-components': {
+    kind: 'client-components',
+    path: 'client-components',
+    title: 'Client Components',
+    description: 'This is an example for Client Components only',
+  },
 } satisfies Record<Kind, Meta>;
 
 const __filename = fileURLToPath(import.meta.url);

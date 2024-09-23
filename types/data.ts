@@ -1,7 +1,8 @@
 export type Kind =
   | 'standalone-server-components'
   | 'client-interactivity'
-  | 'nuxt-island';
+  | 'nuxt-island'
+  | 'client-components';
 
 export type Meta = {
   kind?: Kind;

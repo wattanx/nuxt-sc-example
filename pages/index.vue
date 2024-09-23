@@ -21,5 +21,11 @@ import NavigationCard from '~/components/NavigationCard.vue';
       title="NuxtIsland"
       description="`NuxtIsland` is the base component of Server Components"
     />
+
+    <NavigationCard
+      href="/examples/client-components"
+      title="Client Components"
+      description="This is an example for Client Components only"
+    />
   </div>
 </template>
