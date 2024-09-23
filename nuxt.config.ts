@@ -10,6 +10,9 @@ export default defineNuxtConfig({
     '/examples/nuxt-island': {
       prerender: true,
     },
+    '/client-component': {
+      prerender: true,
+    },
   },
   app: {
     head: {

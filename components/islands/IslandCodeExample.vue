@@ -11,8 +11,10 @@ type Props = {
 
 const props = defineProps<Props>();
 
-const code = `const a = ${props.count}`;
-const html = hljs.highlightAuto(code).value;
+const html = computed(() => {
+  const code = `const a = ${props.count}`;
+  return hljs.highlightAuto(code).value;
+});
 </script>
 
 <template>
