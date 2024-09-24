@@ -13,6 +13,12 @@ export default defineNuxtConfig({
     '/examples/client-components': {
       prerender: true,
     },
+    '/nuxt-content': {
+      prerender: true,
+    },
+    '/nuxt-content-sc': {
+      prerender: true,
+    },
   },
   app: {
     head: {
@@ -54,12 +60,12 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/content'],
   css: ['~/assets/global.css'],
 
   experimental: {
     componentIslands: {
-      selectiveClient: 'deep',
+      selectiveClient: true,
     },
   },
 
@@ -75,6 +81,23 @@ export default defineNuxtConfig({
   nitro: {
     experimental: {
       wasm: true,
+    },
+  },
+  content: {
+    highlight: {
+      theme: 'github-dark',
+      langs: [
+        'json',
+        'js',
+        'ts',
+        'html',
+        'css',
+        'vue',
+        'shell',
+        'mdc',
+        'md',
+        'yaml',
+      ],
     },
   },
 });
