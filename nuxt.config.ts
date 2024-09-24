@@ -64,9 +64,7 @@ export default defineNuxtConfig({
   css: ['~/assets/global.css'],
 
   experimental: {
-    componentIslands: {
-      selectiveClient: true,
-    },
+    componentIslands: true,
   },
 
   typescript: {
@@ -83,11 +81,10 @@ export default defineNuxtConfig({
       wasm: true,
     },
   },
-  // Error if selectiveClient is enabled
-  // content: {
-  //   highlight: {
-  //     theme: 'github-dark',
-  //     langs: ['js', 'ts', 'html', 'css', 'vue'],
-  //   },
-  // },
+  content: {
+    highlight: {
+      theme: 'github-dark',
+      langs: ['js', 'ts', 'html', 'css', 'vue'],
+    },
+  },
 });

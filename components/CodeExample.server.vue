@@ -29,7 +29,5 @@ const html = computed(() => {
       <p>If count is changed, code is changed.</p>
       <div class="bg-gray-900" v-html="html" />
     </div>
-
-    <slot />
   </div>
 </template>
