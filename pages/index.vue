@@ -27,5 +27,11 @@ import NavigationCard from '~/components/NavigationCard.vue';
       title="Client Components"
       description="This is an example for Client Components only"
     />
+
+    <NavigationCard
+      href="/nuxt-content-sc"
+      title="Nuxt Content with Server Components"
+      description="Combine Nuxt Content with Server Components"
+    />
   </div>
 </template>

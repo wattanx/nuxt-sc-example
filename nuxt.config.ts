@@ -13,6 +13,12 @@ export default defineNuxtConfig({
     '/examples/client-components': {
       prerender: true,
     },
+    '/nuxt-content': {
+      prerender: true,
+    },
+    '/nuxt-content-sc': {
+      prerender: true,
+    },
   },
   app: {
     head: {
@@ -54,13 +60,11 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/content', '@nuxt/image'],
   css: ['~/assets/global.css'],
 
   experimental: {
-    componentIslands: {
-      selectiveClient: 'deep',
-    },
+    componentIslands: true,
   },
 
   typescript: {
@@ -71,10 +75,16 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
 
-  compatibilityDate: '2024-08-18',
+  compatibilityDate: '2024-09-24',
   nitro: {
     experimental: {
       wasm: true,
+    },
+  },
+  content: {
+    highlight: {
+      theme: 'github-dark',
+      langs: ['js', 'ts', 'html', 'css', 'vue'],
     },
   },
 });
