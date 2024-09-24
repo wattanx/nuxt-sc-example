@@ -1,5 +1,7 @@
 <template>
-  <ContentDoc path="/example" />
+  <div>
+    <ContentDoc path="/example" />
+  </div>
 </template>
 
 <style scoped>
