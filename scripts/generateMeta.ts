@@ -34,14 +34,15 @@ export const meta = {
     kind: 'lazy-server-components',
     path: 'lazy-server-components',
     title: 'Lazy Server Components',
-    description: 'Lazy Server Components do not block navigation.',
+    description:
+      'Lazy Server Components do not block navigation. Once rendered, they are cached',
   },
   'non-lazy-server-components': {
     kind: 'non-lazy-server-components',
     path: 'non-lazy-server-components',
     title: 'Non-Lazy Server Components',
     description:
-      'Navigation is blocked until the Server Components are rendered.',
+      'Navigation is blocked until the Server Components are rendered. Once rendered, they are cached',
   },
 } satisfies Record<Kind, Meta>;
 

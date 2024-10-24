@@ -8,9 +8,6 @@ const count = ref(0);
 
 <template>
   <Boundary label="Client Component">
-    <button class="mt-2 rounded-md bg-gray-800 px-2 py-1" @click="count++">
-      increment
-    </button>
     <HeavyComp :lazy="true" class="mt-6">
       <template #fallback>
         <p>loading...</p>
