@@ -7,7 +7,7 @@ import NavigationCard from '~/components/NavigationCard.vue';
     <NavigationCard
       href="/examples/standalone-server-components"
       title="Standalone server components"
-      description="basic example. Navigation is blocked until the Server Components are rendered."
+      description="basic example."
     />
 
     <NavigationCard
@@ -26,6 +26,12 @@ import NavigationCard from '~/components/NavigationCard.vue';
       href="/examples/client-components"
       title="Client Components"
       description="This is an example for Client Components only."
+    />
+
+    <NavigationCard
+      href="/examples/non-lazy-server-components"
+      title="Non-Lazy Server Components"
+      description="Navigation is blocked until the Server Components are rendered."
     />
 
     <NavigationCard

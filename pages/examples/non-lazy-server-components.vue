@@ -11,10 +11,6 @@ const count = ref(0);
     <button class="mt-2 rounded-md bg-gray-800 px-2 py-1" @click="count++">
       increment
     </button>
-    <HeavyComp :lazy="true" class="mt-6">
-      <template #fallback>
-        <p>loading...</p>
-      </template>
-    </HeavyComp>
+    <HeavyComp class="mt-6" />
   </Boundary>
 </template>

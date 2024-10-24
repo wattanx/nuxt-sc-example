@@ -12,7 +12,5 @@ const count = ref(0);
       increment
     </button>
     <CodeExample :count class="mt-6" />
-
-    <HeavyComp />
   </Boundary>
 </template>

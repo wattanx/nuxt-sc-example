@@ -36,6 +36,13 @@ export const meta = {
     title: 'Lazy Server Components',
     description: 'Lazy Server Components do not block navigation.',
   },
+  'non-lazy-server-components': {
+    kind: 'non-lazy-server-components',
+    path: 'non-lazy-server-components',
+    title: 'Non-Lazy Server Components',
+    description:
+      'Navigation is blocked until the Server Components are rendered.',
+  },
 } satisfies Record<Kind, Meta>;
 
 const __filename = fileURLToPath(import.meta.url);

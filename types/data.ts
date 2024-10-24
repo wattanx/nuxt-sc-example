@@ -3,7 +3,8 @@ export type Kind =
   | 'client-interactivity'
   | 'nuxt-island'
   | 'client-components'
-  | 'lazy-server-components';
+  | 'lazy-server-components'
+  | 'non-lazy-server-components';
 
 export type Meta = {
   kind?: Kind;
