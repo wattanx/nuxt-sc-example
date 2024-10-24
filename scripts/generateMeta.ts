@@ -30,6 +30,20 @@ export const meta = {
     title: 'Client Components',
     description: 'This is an example for Client Components only',
   },
+  'lazy-server-components': {
+    kind: 'lazy-server-components',
+    path: 'lazy-server-components',
+    title: 'Lazy Server Components',
+    description:
+      'Lazy Server Components do not block navigation. Once rendered, they are cached',
+  },
+  'non-lazy-server-components': {
+    kind: 'non-lazy-server-components',
+    path: 'non-lazy-server-components',
+    title: 'Non-Lazy Server Components',
+    description:
+      'Navigation is blocked until the Server Components are rendered. Once rendered, they are cached',
+  },
 } satisfies Record<Kind, Meta>;
 
 const __filename = fileURLToPath(import.meta.url);
