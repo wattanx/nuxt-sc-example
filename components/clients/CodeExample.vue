@@ -19,11 +19,11 @@ const html = computed(() => {
 
 <template>
   <div
-    class="relative rounded-md border border-dashed border-gray-400 bg-blue-900 p-6"
+    class="relative rounded-md border border-dashed border-gray-400 bg-red-900 p-6"
   >
     <div class="space-y-4">
       <p class="absolute -top-4 rounded-full bg-gray-600 px-4 py-2 text-sm">
-        Server Component
+        Client Component
       </p>
       <p>This component is not included in the bundle</p>
       <p>If count is changed, code is changed.</p>
