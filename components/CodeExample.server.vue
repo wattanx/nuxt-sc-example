@@ -28,8 +28,16 @@ const html = computed(() => {
       <p>This component is not included in the bundle</p>
       <p>If count is changed, code is changed.</p>
       <div class="bg-gray-900" v-html="html" />
+
+      <p class="text">scoped style work</p>
     </div>
 
     <slot />
   </div>
 </template>
+
+<style scoped>
+.text {
+  color: #00dc82;
+}
+</style>
