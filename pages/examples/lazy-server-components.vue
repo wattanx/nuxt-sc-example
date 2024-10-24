@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  layout: 'example',
+  layout: 'without-code',
 });
 
 const count = ref(0);
@@ -11,8 +11,10 @@ const count = ref(0);
     <button class="mt-2 rounded-md bg-gray-800 px-2 py-1" @click="count++">
       increment
     </button>
-    <CodeExample :count class="mt-6" />
-
-    <HeavyComp />
+    <HeavyComp :lazy="true" :count class="mt-6">
+      <template #fallback>
+        <p>loading...</p>
+      </template>
+    </HeavyComp>
   </Boundary>
 </template>
