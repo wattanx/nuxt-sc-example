@@ -50,6 +50,12 @@ export const meta = {
     title: 'Selective Hydration',
     description: 'A part of the Server Component can be hydrated.',
   },
+  'server-only-page': {
+    kind: 'server-only-page',
+    path: 'server-only-page.server',
+    title: 'Server Only Page',
+    description: 'This page is rendered only on the server',
+  },
 } satisfies Record<Kind, Meta>;
 
 const __filename = fileURLToPath(import.meta.url);
@@ -102,6 +108,10 @@ async function main() {
 
         // @ts-expect-error
         codeMap[name] = code[index];
+      }
+
+      if (key.endsWith('.server')) {
+        key = key.replace('.server', '');
       }
 
       await writeFile(

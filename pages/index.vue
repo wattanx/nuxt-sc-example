@@ -45,5 +45,11 @@ import NavigationCard from '~/components/NavigationCard.vue';
       title="Selective Hydration"
       description="Server Components can be hydrated selectively."
     />
+
+    <NavigationCard
+      href="/examples/server-only-page"
+      title="Server Only Page"
+      description="This page is rendered on the server only."
+    />
   </div>
 </template>
