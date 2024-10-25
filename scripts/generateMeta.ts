@@ -44,6 +44,12 @@ export const meta = {
     description:
       'Navigation is blocked until the Server Components are rendered. Once rendered, they are cached',
   },
+  'selective-hydration': {
+    kind: 'selective-hydration',
+    path: 'selective-hydration',
+    title: 'Selective Hydration',
+    description: 'A part of the Server Component can be hydrated.',
+  },
 } satisfies Record<Kind, Meta>;
 
 const __filename = fileURLToPath(import.meta.url);
