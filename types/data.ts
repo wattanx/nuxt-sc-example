@@ -5,7 +5,8 @@ export type Kind =
   | 'client-components'
   | 'lazy-server-components'
   | 'non-lazy-server-components'
-  | 'selective-hydration';
+  | 'selective-hydration'
+  | 'server-only-page';
 
 export type Meta = {
   kind?: Kind;

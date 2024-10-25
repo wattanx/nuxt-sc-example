@@ -17,6 +17,9 @@ export default defineNuxtConfig({
       prerender: true,
       ssr: false,
     },
+    '/examples/server-only-page': {
+      prerender: true,
+    },
   },
   app: {
     head: {
