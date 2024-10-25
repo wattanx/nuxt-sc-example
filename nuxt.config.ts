@@ -13,6 +13,10 @@ export default defineNuxtConfig({
     '/examples/client-components': {
       prerender: true,
     },
+    '/examples/selective-hydration': {
+      prerender: true,
+      ssr: false,
+    },
   },
   app: {
     head: {
@@ -59,7 +63,7 @@ export default defineNuxtConfig({
 
   experimental: {
     componentIslands: {
-      selectiveClient: 'deep',
+      selectiveClient: true,
     },
   },
 

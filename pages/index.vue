@@ -39,5 +39,11 @@ import NavigationCard from '~/components/NavigationCard.vue';
       title="Lazy Server Components"
       description="Lazy Server Components do not block navigation."
     />
+
+    <NavigationCard
+      href="/examples/selective-hydration"
+      title="Selective Hydration"
+      description="Server Components can be hydrated selectively."
+    />
   </div>
 </template>
