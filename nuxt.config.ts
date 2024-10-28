@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     '/examples/client-components': {
       prerender: true,
     },
-    '/examples/selective-hydration': {
+    '/examples/partial-hydration': {
       prerender: true,
       ssr: false,
     },

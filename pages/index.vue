@@ -41,9 +41,9 @@ import NavigationCard from '~/components/NavigationCard.vue';
     />
 
     <NavigationCard
-      href="/examples/selective-hydration"
-      title="Selective Hydration"
-      description="Server Components can be hydrated selectively."
+      href="/examples/partial-hydration"
+      title="Partial Hydration"
+      description="A part of the Server Component can be hydrated."
     />
 
     <NavigationCard
