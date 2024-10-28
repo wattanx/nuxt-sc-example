@@ -44,10 +44,10 @@ export const meta = {
     description:
       'Navigation is blocked until the Server Components are rendered. Once rendered, they are cached',
   },
-  'selective-hydration': {
-    kind: 'selective-hydration',
-    path: 'selective-hydration',
-    title: 'Selective Hydration',
+  'partial-hydration': {
+    kind: 'partial-hydration',
+    path: 'partial-hydration',
+    title: 'Partial Hydration',
     description: 'A part of the Server Component can be hydrated.',
   },
   'server-only-page': {
