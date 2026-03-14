@@ -1,5 +1,10 @@
+import tailwindcss from '@tailwindcss/vite';
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  vite: {
+    plugins: [tailwindcss()],
+  },
   routeRules: {
     '/examples/standalone-server-components': {
       prerender: true,
@@ -61,7 +66,7 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss'],
+  modules: [],
   css: ['~/assets/global.css'],
 
   experimental: {
