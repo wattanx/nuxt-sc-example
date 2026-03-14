@@ -1,4 +1,5 @@
-import { createHighlighterCore, createWasmOnigEngine } from 'shiki/core';
+import { createHighlighterCore } from 'shiki/core';
+import { createJavaScriptRegexEngine } from 'shiki/engine/javascript';
 
 export async function codeToHtml(code: string, lang: 'javascript' | 'vue') {
   const highlighter = await createHighlighterCore({
@@ -7,8 +8,7 @@ export async function codeToHtml(code: string, lang: 'javascript' | 'vue') {
       import('shiki/langs/javascript.mjs'),
       import('shiki/langs/vue.mjs'),
     ],
-    loadWasm: import('shiki/wasm'),
-    engine: createWasmOnigEngine(import('shiki/wasm')),
+    engine: createJavaScriptRegexEngine(),
   });
 
   return highlighter.codeToHtml(code, {
