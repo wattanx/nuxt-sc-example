@@ -1,5 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "nuxt-sc-example",
   "compatibility_flags": ["nodejs_compat"],
   "compatibility_date": "2026-03-14",
   "pages_build_output_dir": "./dist"
